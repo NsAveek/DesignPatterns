@@ -1,14 +1,24 @@
 package aveek.com.designpatterns.builder;
 
-public class Student {
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+import io.realm.annotations.Required;
 
+public class Student extends RealmObject {
+
+    @PrimaryKey
     private String name;
+    @Required
     private String address;
+    @Required
     private String email;
     private String phoneNumber;
     private String passportNumber;
     private int age;
 
+    public Student(){
+
+    }
 
     private Student(final StudentBuilder builder) {
         name = builder.name;
